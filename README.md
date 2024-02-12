@@ -8,8 +8,8 @@ A command prompt for Windows Phone 8.
 
 ### Requirements
 * Windows Phone 8.1
-* Unlocked bootloader.
-* Developer unlock.
+* Bootloader unlock.
+* Interop unlock.
 
 
 ### More
