@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87611E4E-F9F7-411B-ACA9-D24A1E001AB0}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMDInjector_WP8</RootNamespace>
+    <AssemblyName>CMDInjector WP8</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>CMDInjector_WP8_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>CMDInjector_WP8.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BootConfig.xaml.cs">
+      <DependentUpon>BootConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Changelog.cs" />
+    <Compile Include="Classes\Images2Video.cs" />
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PacMan.xaml.cs">
+      <DependentUpon>PacMan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Snapper.xaml.cs">
+      <DependentUpon>Snapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.xaml.cs">
+      <DependentUpon>Startup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Terminal.xaml.cs">
+      <DependentUpon>Terminal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TweakBox.xaml.cs">
+      <DependentUpon>TweakBox.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BootConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PacMan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Snapper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Startup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Terminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TweakBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\consola.ttf" />
+    <Content Include="Assets\Fonts\segmdl2.ttf" />
+    <Content Include="Assets\Icons\PowerOptions\FFULoaderPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\LockscreenPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\RestartPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\PowerOptions\ShutdownPowerOptionTileLogo.png" />
+    <Content Include="Assets\Icons\VolumeOptions\DownVolumeOptionTileLogo.png" />
+    <Content Include="Assets\Icons\VolumeOptions\UpVolumeOptionTileLogo.png" />
+    <Content Include="Assets\Images\Bootscreens\BootupImage.png" />
+    <Content Include="Assets\Images\Bootscreens\ShutdownImage.png" />
+    <Content Include="Assets\Images\DonationUPI.jpg" />
+    <Content Include="Assets\Sounds\Capture.wav" />
+    <Content Include="Assets\Sounds\StartRecord.wav" />
+    <Content Include="Assets\Sounds\StopRecord.wav" />
+    <Content Include="Assets\Sounds\Tick.wav" />
+    <Content Include="Contents\Bootsh\bootshsvc.dll" />
+    <Content Include="Contents\BatchScripts\SystemWide.bat" />
+    <Content Include="Contents\BatchScripts\Startup.bat" />
+    <Content Include="Contents\Bootsh\bootshsvc.dll.mui" />
+    <Content Include="Contents\ConsoleApps\a32.dll" />
+    <Content Include="Contents\ConsoleApps\attrib.exe" />
+    <Content Include="Contents\ConsoleApps\bcdedit.exe" />
+    <Content Include="Contents\ConsoleApps\CaptureScreenApp.exe" />
+    <Content Include="Contents\ConsoleApps\certmgr.exe" />
+    <Content Include="Contents\ConsoleApps\CheckNetIsolation.exe" />
+    <Content Include="Contents\ConsoleApps\chkdsk.exe" />
+    <Content Include="Contents\ConsoleApps\cmd.exe" />
+    <Content Include="Contents\ConsoleApps\comp.exe" />
+    <Content Include="Contents\ConsoleApps\dcopy.exe" />
+    <Content Include="Contents\ConsoleApps\depends.exe" />
+    <Content Include="Contents\ConsoleApps\DIALTESTWP8.EXE" />
+    <Content Include="Contents\ConsoleApps\Dism.exe" />
+    <Content Include="Contents\ConsoleApps\Dism\AppxProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\AssocProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\CbsProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\CompatProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DismCore.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DismCorePS.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DismHost.exe" />
+    <Content Include="Contents\ConsoleApps\Dism\DismProv.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\DmiProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\FfuProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\FolderProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\GenericProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\IBSProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\ImagingProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\IntlProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\LogProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\MsiProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\OfflineSetupProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\OSProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\ProvProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\SmiProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\TransmogProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\UnattendProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\VhdProvider.dll" />
+    <Content Include="Contents\ConsoleApps\Dism\WimProvider.dll" />
+    <Content Include="Contents\ConsoleApps\doskey.exe" />
+    <Content Include="Contents\ConsoleApps\fc.exe" />
+    <Content Include="Contents\ConsoleApps\find.exe" />
+    <Content Include="Contents\ConsoleApps\findstr.exe" />
+    <Content Include="Contents\ConsoleApps\finger.exe" />
+    <Content Include="Contents\ConsoleApps\ftpd.exe" />
+    <Content Include="Contents\ConsoleApps\gbot.exe" />
+    <Content Include="Contents\ConsoleApps\gse.dll" />
+    <Content Include="Contents\ConsoleApps\help.exe" />
+    <Content Include="Contents\ConsoleApps\HOSTNAME.EXE" />
+    <Content Include="Contents\ConsoleApps\icacls.exe" />
+    <Content Include="Contents\ConsoleApps\ipconfig.exe" />
+    <Content Include="Contents\ConsoleApps\k32.dll" />
+    <Content Include="Contents\ConsoleApps\kill.exe" />
+    <Content Include="Contents\ConsoleApps\label.exe" />
+    <Content Include="Contents\ConsoleApps\minshutdown.exe" />
+    <Content Include="Contents\ConsoleApps\mountvol.exe" />
+    <Content Include="Contents\ConsoleApps\msnap.exe" />
+    <Content Include="Contents\ConsoleApps\mwkdbgctrl.exe" />
+    <Content Include="Contents\ConsoleApps\net.exe" />
+    <Content Include="Contents\ConsoleApps\net1.exe" />
+    <Content Include="Contents\ConsoleApps\neth.dll" />
+    <Content Include="Contents\ConsoleApps\netsh.exe" />
+    <Content Include="Contents\ConsoleApps\nslookup.exe" />
+    <Content Include="Contents\ConsoleApps\pacmanerr.dll" />
+    <Content Include="Contents\ConsoleApps\pacman_ierror.dll" />
+    <Content Include="Contents\ConsoleApps\ping.exe" />
+    <Content Include="Contents\ConsoleApps\powercfg.exe" />
+    <Content Include="Contents\ConsoleApps\PowerTool.exe" />
+    <Content Include="Contents\ConsoleApps\ProvisioningTool.exe" />
+    <Content Include="Contents\ConsoleApps\reg.exe" />
+    <Content Include="Contents\ConsoleApps\regini.exe" />
+    <Content Include="Contents\ConsoleApps\regsvr32.exe" />
+    <Content Include="Contents\ConsoleApps\sc.exe" />
+    <Content Include="Contents\ConsoleApps\ScreenSnapper.exe" />
+    <Content Include="Contents\ConsoleApps\setx.exe" />
+    <Content Include="Contents\ConsoleApps\shutdown.exe" />
+    <Content Include="Contents\ConsoleApps\SirepController.exe" />
+    <Content Include="Contents\ConsoleApps\sleep.exe" />
+    <Content Include="Contents\ConsoleApps\SlideToShutdown.exe" />
+    <Content Include="Contents\ConsoleApps\TaskView.exe" />
+    <Content Include="Contents\ConsoleApps\telnetd.exe" />
+    <Content Include="Contents\ConsoleApps\TestDeploymentInfo.dll" />
+    <Content Include="Contents\ConsoleApps\th.dll" />
+    <Content Include="Contents\ConsoleApps\TH.exe" />
+    <Content Include="Contents\ConsoleApps\tlist.exe" />
+    <Content Include="Contents\ConsoleApps\tracelog.exe" />
+    <Content Include="Contents\ConsoleApps\VolumeDown.exe" />
+    <Content Include="Contents\ConsoleApps\VolumeUp.exe" />
+    <Content Include="Contents\ConsoleApps\WPConPlatDev.exe" />
+    <Content Include="Contents\ConsoleApps\xcopy.exe" />
+    <Content Include="Contents\ConsoleApps\en-US\attrib.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\cmd.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\Dism.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\finger.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\hostname.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ipconfig.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\neth.dll.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\nslookup.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ping.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\reg.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\regsvr32.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\sc.exe.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\AppxProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\AssocProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\CbsProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\CompatProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\DismCore.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\DismProv.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\DmiProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\FfuProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\FolderProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\GenericProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\IBSProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\ImagingProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\IntlProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\LogProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\MsiProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\OfflineSetupProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\OSProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\ProvProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\SmiProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\TransmogProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\UnattendProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\VhdProvider.dll.mui" />
+    <Content Include="Contents\ConsoleApps\Dism\en-US\WimProvider.dll.mui" />
+    <Content Include="Contents\BatchScripts\NonSystemWide.bat" />
+    <Content Include="Contents\BatchScripts\Setup.bat" />
+    <Content Include="Contents\Startup\startup.bsc" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="WindowsPhoneReservedAppInfo.xml" />
+    <None Include="app.config" />
+    <Content Include="Contents\ConsoleApps\en-US\findstr.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\ICacls.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\mountvol.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\powercfg.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\setx.exe.mui" />
+    <Content Include="Contents\ConsoleApps\more.com" />
+    <Content Include="Contents\ConsoleApps\en-US\CheckNetIsolation.exe.mui" />
+    <Content Include="Contents\ConsoleApps\en-US\help.exe.mui" />
+    <Content Include="Contents\Certificates\SbcpFlightToken.p7b" />
+    <Content Include="Contents\DeveloperMenu\developermenu.efi" />
+    <Content Include="Contents\DeveloperMenu\ui\boot.ums.connected.bmpx" />
+    <Content Include="Contents\DeveloperMenu\ui\boot.ums.disconnected.bmpx" />
+    <Content Include="Contents\DeveloperMenu\ui\boot.ums.waiting.bmpx" />
+    <Content Include="Contents\ConsoleApps\en-US\bcdedit.exe.mui" />
+    <Content Include="Contents\BatchScripts\SnapperRecords.bat" />
+    <Content Include="Contents\BatchScripts\SnapperShots.bat" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\Icons\Extensions\AppxbundleExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\AppxExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\PmbakExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\PmlogExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Extensions\XapExtensionFileLogo.png" />
+    <Content Include="Assets\Icons\Menus\AboutMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\BootConfigMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\HelpMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\HomeMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\PacManMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\SettingsMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\SnapperMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\StartupMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\TerminalMenuTileLogo.png" />
+    <Content Include="Assets\Icons\Menus\TweakBoxMenuTileLogo.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Sounds\Alert.wav" />
+    <Content Include="Assets\Sounds\Error.wav" />
+    <Content Include="Assets\Sounds\Lock.wav" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SquareTile150x150.png" />
+    <Content Include="Assets\SquareTile71x71.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Tiles\AppTileMedium.png" />
+    <Content Include="Assets\Tiles\AppTileSmall.png" />
+    <Content Include="Assets\WideLogo.png" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMDInjectorHelper\CMDInjectorHelper.csproj">
+      <Project>{0A329586-DB89-483D-ACDC-83469BC5F942}</Project>
+      <Name>CMDInjectorHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevProgram, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\App Libraries\DevProgram.winmd</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

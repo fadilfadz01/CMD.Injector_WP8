@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.PacMan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.PacManPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}" Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.PacManPageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="20,-10,20,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.PacManPageSubTitle1, Source={StaticResource LocalizedStrings}}" FontSize="30"/>
+                    <toolkit:PhoneTextBox Name="AppsPath" Hint="C:\Data\Users\Public\Downloads\Test.xap" FontSize="23" MaxHeight="130" Margin="-10,0,-10,0" BorderBrush="Gray" TextChanged="AppsPath_TextChanged"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ResultBox" Text="{Binding Path=LocalizedResources.PacManPageResultText1, Source={StaticResource LocalizedStrings}}" Margin="5,0,5,0"/>
+                        <RichTextBox Name="SeeLogBox" Visibility="Collapsed">
+                            <Paragraph>
+                                <Hyperlink Click="SeeLog_Click">
+                                    <Run Text="{Binding Path=LocalizedResources.PacManPageResultText2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource AppAccentColor}"/>
+                                </Hyperlink>
+                            </Paragraph>
+                        </RichTextBox>
+                    </StackPanel>
+                    <ProgressBar Name="InstallProg" Margin="-10,10,-10,0" Foreground="{StaticResource AppAccentColor}"/>
+                    <ProgressBar Name="IndivitualInstProg" Margin="-10,-4,-10,0" Foreground="{StaticResource AppAccentColor}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,20,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.PacManPageTextBlock1Text, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="23"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="70,0,0,0">
+                            <toolkit:ListPicker Name="DeploymentOpt" SelectedIndex="0" VerticalAlignment="Center" MinWidth="200" Margin="0,-10,0,0">
+                                <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.PacManPageComboBoxItem1Text, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="20"/>
+                                <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.PacManPageComboBoxItem2Text, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="20"/>
+                            </toolkit:ListPicker>
+                        <Button Name="DeploymentInfoBtn" Content="&#xE171;" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" VerticalAlignment="Center" Height="70" Click="DeploymentInfoBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <TextBlock Text="{Binding Path=LocalizedResources.PacManPageTextBlock2Text, Source={StaticResource LocalizedStrings}}" FontSize="23" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-15,0,0">
+                        <RadioButton Name="InstallType" Content="{Binding Path=LocalizedResources.PacManPageRadioButtonItem1Text, Source={StaticResource LocalizedStrings}}" FontSize="20" GroupName="InstallTypeGroup" IsChecked="True" Checked="InstallType_Checked"/>
+                        <RadioButton Name="UpdateType" Content="{Binding Path=LocalizedResources.PacManPageRadioButtonItem2Text, Source={StaticResource LocalizedStrings}}" FontSize="20" GroupName="InstallTypeGroup" Checked="InstallType_Checked"/>
+                        <RadioButton Name="RegisterType" Content="{Binding Path=LocalizedResources.PacManPageRadioButtonItem3Text, Source={StaticResource LocalizedStrings}}" FontSize="20" GroupName="InstallTypeGroup" Checked="InstallType_Checked"/>
+                    </StackPanel>
+                    <TextBlock Name="BrowseBtnTip" Text="{Binding Path=LocalizedResources.PacManPageButton1TextDescription, Source={StaticResource LocalizedStrings}}" Foreground="Yellow" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="15,10,15,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="-5,15,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Name="BrowseBtn" Content="{Binding Path=LocalizedResources.PacManPageButton1Text, Source={StaticResource LocalizedStrings}}" MinWidth="150" Margin="0,0,10,0" Click="BrowseBtn_Click" Hold="BrowseBtn_Hold"/>
+                    <Button Name="InstallBtn" Content="{Binding Path=LocalizedResources.PacManPageButton2Text1, Source={StaticResource LocalizedStrings}}" MinWidth="150" Click="InstallBtn_Click" IsEnabled="False"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

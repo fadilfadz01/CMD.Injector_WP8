@@ -1,0 +1,80 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.Help"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.HelpPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.HelpPageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <StackPanel Margin="0,-10,0,0">
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageSubTitle, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion1, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,0,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer1, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion2, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer2, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion3, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer3, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion4, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer4, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion5, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer5, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion6, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer6, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <!--<TextBlock Text="Q. Does the un-injection option removes the permanent injection?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Yes." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion7, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer7, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <!--<TextBlock Text="Q. How can I access PowerShell?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. By typing PowerShell in the CMD console or by connecting telnet at PORT 24." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <!--<TextBlock Text="Q. CMD is not working after the injection. why?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Make sure that you have rebooted the device once injected &amp; also try to restore the NDTKSvc." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <!--<TextBlock Text="Q. I have insider build with unlocked bootloader, But why the App is detected as locked? And also can I inject in this case?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Insider builds are unsupported by the WPinternals and the App only detects properly unlocked Booloader. But it is safe to inject in this case." TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="Q. Can I relock the Bootloader once injected the CMD?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Yes you can. But if you have build 10586 or below, you must have to restore the Security manager driver from the App Settings. Otherwise you will get BSOD during boot." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion9, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer9, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <!--<TextBlock Text="Q. I have forgotten to restore the Security manager driver before relocking the Bootloader. Now I have getting Sad face :( or BSOD during boot. How can I fix this?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Unlock the Bootloader, restore the Security manager driver from the App Settings and then relock it again." TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <TextBlock Text="Q. I have unlocked the Bootloader again after relocked before. But the CMD is not working, why?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. You have to patch the Security manager driver from the App Settings first, or re-inject the CMD." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion8, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer8, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <!--<TextBlock Text="Q. How can I remove or uninstall CMD from my device?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. There is no simple solution available, You have to perform a hard reset. Or you can disable the telnet &amp; CMD function by disabling Bootsh from the App settings." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <!--<TextBlock Text="Q. What is the solution for the App crashing on launch?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Make sure the NDTKSvc is restored and reboot the device." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion10, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer10, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <!--<TextBlock Text="Q. Why boot loader settings are unchangable in the BootConfig menu?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Because it requires device having a physical camera button, and by pressing it from the BootConfig menu will make it changable." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <!--<TextBlock Text="Q. Why the BootConfig &amp; TweakBox settings are reverting the changes made?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Make sure you have restored the NDTKSvc." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageQuestion11, Source={StaticResource LocalizedStrings}}" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpPageAnswer11, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0"/>
+                <!--<TextBlock Text="Q. Why is the TestSingning &amp; NoIntegrityChecks in BootConfig is unchangable?" FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. Because it requires unlocked bootloader." TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+                <!--<TextBlock Text="Q. " FontWeight="SemiBold" TextWrapping="Wrap" Margin="25,10,0,0"/>
+                <TextBlock Text="A. " TextWrapping="Wrap" Margin="25,0,5,0"/>-->
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

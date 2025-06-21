@@ -1,0 +1,101 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.AboutPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Name="versionText" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="150"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle1Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="Fadil Fadz (@fadilfadz01)" Margin="25,0,0,0"/>
+                    <RichTextBox Margin="14,0,0,0" Foreground="{StaticResource AppAccentColor}" HorizontalAlignment="Left">
+                        <Paragraph>
+                            <Hyperlink Click="Telegram_Click" Foreground="#FF0078D7">Telegram</Hyperlink>  
+                            <Hyperlink Click="Github_Click" Foreground="#FF0078D7">GitHub</Hyperlink>  
+                            <Hyperlink Click="Youtube_Click" Foreground="#FF0078D7">YouTube</Hyperlink>
+                        </Paragraph>
+                    </RichTextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle2Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle2Description, Source={StaticResource LocalizedStrings}}" Margin="25,0,0,0" TextWrapping="Wrap"/>
+                    <RichTextBox Margin="14,0,0,0" Foreground="{StaticResource AppAccentColor}" HorizontalAlignment="Left">
+                        <Paragraph>
+                            <Hyperlink Click="Paypal_Click" Foreground="#FF0078D7">Paypal</Hyperlink>  
+                            <Hyperlink Click="Boosty_Click" Foreground="#FF0078D7">Boosty</Hyperlink>  
+                            <Hyperlink Click="Upi_Click" Foreground="#FF0078D7">UPI</Hyperlink>  
+                        </Paragraph>
+                    </RichTextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle3Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle3Description1, Source={StaticResource LocalizedStrings}}" Margin="25,0,0,0" TextWrapping="Wrap"/>
+                    <RichTextBox Margin="14,0,5,0" TextWrapping="Wrap">
+                        <Paragraph>
+                            <Run Text="{Binding Path=LocalizedResources.AboutPageSubTitle3Description2, Source={StaticResource LocalizedStrings}}"/>
+                            <Hyperlink x:Name="PermissionHelp" Click="PermissionHelp_Click" Foreground="#FF0078D7">
+                                <Run Text="{Binding Path=LocalizedResources.AboutPageSubTitle3Description3, Source={StaticResource LocalizedStrings}}"/>
+                            </Hyperlink>.
+                        </Paragraph>
+                    </RichTextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle4Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="@Microsoft - Telnet server &amp; CMD components" Margin="25,0,0,0"/>
+                    <TextBlock Text="@gus33000 - NDTK library" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Empyreal96 - Application logo" Margin="25,0,0,0"/>
+                    <TextBlock Text="@basharastifan - Telnet client &amp; Images2Video" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Icons8 - Application menu icons" Margin="25,0,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle5Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="@Heathcliff74 - WPinternals" Margin="25,0,0,0"/>
+                    <TextBlock Text="@gus33000 - Interop Tools" Margin="25,0,0,0"/>
+                    <TextBlock Text="@basharastifan - Windows Universal Tool" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Lasitha_S - W10M repository" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Empyreal96 - WP Device Portal" Margin="25,0,0,0"/>
+                    <TextBlock Text="@Slendeyyy - Loopback exemption solution" Margin="25,0,0,0"/>
+                    <TextBlock Text="@mediaexplorer - TelnetUWP" Margin="25,0,0,0"/>
+                    <TextBlock Text="@W10M group admins - General help &amp; support" Margin="25,0,0,0"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle6Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutPageSubTitle6Description, Source={StaticResource LocalizedStrings}}" Margin="25,0,5,0" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0">
+                    <Button Name="UpdateBtn" Content="{Binding Path=LocalizedResources.AboutPageButton1Text1, Source={StaticResource LocalizedStrings}}" MinWidth="150" Click="UpdateBtn_Click"/>
+                    <Button Name="ChangelogBtn" Content="{Binding Path=LocalizedResources.AboutPageButton2Text, Source={StaticResource LocalizedStrings}}" MinWidth="150" Margin="10,0,0,0" Click="ChangelogBtn_Click"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

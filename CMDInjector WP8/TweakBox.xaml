@@ -1,0 +1,193 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.TweakBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="250"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSubTitleSystemText, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Name="TipText" Text="{Binding Path=LocalizedResources.TweakBoxPageSystemTextBox1Tip, Source={StaticResource LocalizedStrings}}" Margin="25,0,0,0" Foreground="Yellow" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSystemTextBox1Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,0,0"/>
+                    <StackPanel Margin="40,5,0,10">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="ShutBtn" FontSize="20" Content="{Binding Path=LocalizedResources.TweakBoxPageSystemButton1Content, Source={StaticResource LocalizedStrings}}" MinWidth="150" Margin="0,0,10,0" Click="ShutBtn_Click" Hold="ShutBtn_Hold"/>
+                            <Button Name="RestartBtn" FontSize="20" Content="{Binding Path=LocalizedResources.TweakBoxPageSystemButton2Content, Source={StaticResource LocalizedStrings}}" MinWidth="150" Margin="0,0,10,0" Click="RestartBtn_Click" Hold="RestartBtn_Hold"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="LockscreenBtn" FontSize="20" Content="{Binding Path=LocalizedResources.TweakBoxPageSystemButton3Content, Source={StaticResource LocalizedStrings}}" MinWidth="150" Margin="0,0,10,0" Click="LockscreenBtn_Click" Hold="LockscreenBtn_Hold"/>
+                            <!--<Button Name="FFULoaderBtn" FontSize="20" Content="FFU Loader" MinWidth="150" Margin="0,0,10,0" Click="FFULoaderBtn_Click" Hold="FFULoaderBtn_Hold"/>-->
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="Volume options" FontSize="23" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                        <Button Name="VolumeDownBtn" FontSize="20" MinWidth="150" Content="Volume Down" Click="VolumeBtn_Click" Hold="VolumeBtn_Hold"/>
+                        <Button Name="VolumeUpBtn" FontSize="20" MinWidth="150" Content="Volume Up" Margin="0,0,10,0" Click="VolumeBtn_Click" Hold="VolumeBtn_Hold"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,10,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSubTitleDisplayText, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageDisplayTextBox1Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="BrightTogIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="BrightTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="BrightTog_Checked" Unchecked="BrightTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageDisplayTextBox2Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="PhabletTogIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="PhabletTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="PhabletTog_Checked" Unchecked="PhabletTog_Checked"/>
+                </StackPanel>
+                <!--<StackPanel Grid.Row="4" Margin="0,15,0,0">
+                    <TextBlock Text="Updates:" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="Enable update" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ToggleSwitch Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" />
+                    <TextBlock Text="Disable update" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ToggleSwitch Name="UptTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" />
+                </StackPanel>-->
+                <StackPanel Grid.Row="2" Margin="0,-5,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSubTitleGlanceScreenText, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageGlanceScreenTextBox1Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="20,0,0,0"/>
+                    <toolkit:ListPicker Name="FontFileBox" Width="200" Margin="40,0,0,0" HorizontalAlignment="Left" SelectionChanged="FontFileBox_SelectionChanged">
+                        <toolkit:ListPickerItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                        <toolkit:ListPickerItem Content="WVGA"/>
+                        <toolkit:ListPickerItem Content="720P"/>
+                        <toolkit:ListPickerItem Content="720p_HI"/>
+                        <toolkit:ListPickerItem Content="WXGA"/>
+                        <toolkit:ListPickerItem Content="FHD"/>
+                        <toolkit:ListPickerItem Content="WQHD"/>
+                        <toolkit:ListPickerItem Content="WQHD_HI"/>
+                    </toolkit:ListPicker>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageGlanceScreenTextBox2Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ToggleSwitch Name="FontColorTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="FontColorTog_Checked" Unchecked="FontColorTog_Checked"/>
+                    <StackPanel Name="FontColorStack" Orientation="Horizontal" Margin="40,-30,0,30" Visibility="Collapsed">
+                        <StackPanel>
+                            <RadioButton Name="RedRadio" Content="Red" Margin="0,0,0,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="GreenRadio" Content="Green" Margin="0,0,0,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="BlueRadio" Content="Blue" Margin="0,0,0,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <RadioButton Name="CyanRadio" Content="Cyan" Margin="0,0,0,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="MagentaRadio" Content="Magenta" Margin="0,0,0,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                            <RadioButton Name="YellowRadio" Content="Yellow" Margin="0,0,0,0" GroupName="FontColorGrp" Checked="FontColor_Checked"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageGlanceScreenTextBox3Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="MoveClockTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="MoveClockTog_Checked" Unchecked="MoveClockTog_Checked"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,-5,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSubTitleBootText, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageBootTextBox1Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                    <toolkit:ToggleSwitch Name="BootAnimTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="BootAnimTog_Checked" Unchecked="BootAnimTog_Checked"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageBootTextBox2Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,10,0"/>
+                    <toolkit:ToggleSwitch Name="BootImageTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="BootImageTog_Checked" Unchecked="BootImageTog_Checked"/>
+                    <StackPanel Name="BootImageStack" Orientation="Horizontal" Visibility="Collapsed" Margin="0,-25,0,25">
+                        <TextBox Name="BootImageBox" MinWidth="200" MaxWidth="280" Margin="40,0,0,0" IsReadOnly="True"/>
+                        <Button Name="BootImageBtn" Content="Browse"  MinWidth="70" Margin="0,0,40,0" Click="BootImageBtn_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageBootTextBox3Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,10,0"/>
+                    <toolkit:ToggleSwitch Name="ShutdownImageTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="ShutdownImageTog_Checked" Unchecked="ShutdownImageTog_Checked"/>
+                    <StackPanel Name="ShutdownImageStack" Orientation="Horizontal" Margin="0,-25,0,20" Visibility="Collapsed">
+                        <TextBox Name="ShutdownImageBox" MinWidth="200" MaxWidth="280" Margin="40,0,0,0" IsReadOnly="True"/>
+                        <Button Name="ShutdownImageBtn" Content="Browse"  MinWidth="70" Margin="0,0,40,0" Click="ShutdownImageBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Margin="0,-5,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSubTitleNavigationBarText, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox1Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="SoftwareModeIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="SoftNavTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="SoftNavTog_Checked" Unchecked="SoftNavTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox2Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="DoubleTapIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="DoubleTapTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="DoubleTapTog_Checked" Unchecked="DoubleTapTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox3Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="AutoHideIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="AutoHideTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="AutoHideTog_Checked" Unchecked="AutoHideTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox4Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="SwipeUpIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="SwipeUpTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="SwipeUpTog_Checked" Unchecked="SwipeUpTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox5Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="UserManagedIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="UserManagedTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="UserManagedTog_Checked" Unchecked="UserManagedTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox6Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="BurnInIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="BurninProtTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="BurninProtTog_Checked" Unchecked="BurninProtTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox7Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="BurnInTimeoutIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="BurninTimeoutBox" FontSize="23" InputScope="Number" MaxLength="2" VerticalAlignment="Center" MinWidth="200" MaxWidth="280" Margin="40,0,0,0" TextChanged="BurninTimeoutBox_TextChanged"/>
+                        <Button Name="BurninTimeoutBtn" Content="&#xE74e;" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="70" Click="BurninTimeoutBtn_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="0,10,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox8Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="BurnInColorIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ListPicker Name="ColorPickCombo" MinWidth="200" Margin="40,0,0,0" HorizontalAlignment="Left" SelectionChanged="ColorPickCombo_SelectionChanged">
+                        <toolkit:ListPickerItem Content="Select" FontWeight="Bold" IsHitTestVisible="False"/>
+                    </toolkit:ListPicker>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageNavigationBarTextBox9Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="BurnInOpacityIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <Slider Name="OpacitySlide" Minimum="0" Maximum="100" Margin="40,0,40,0" ValueChanged="OpacitySlide_ValueChanged"/>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Margin="0,-15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageSubTitleMiscText, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageMiscTextBox1Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                    <toolkit:ToggleSwitch Name="DngTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="DngTog_Checked" Unchecked="DngTog_Checked"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,-25,0,0">
+                        <TextBlock Text="{Binding Path=LocalizedResources.TweakBoxPageMiscTextBox2Text, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="VirtualMemoryIndicator" Text="(Reboot required)" Foreground="Yellow" FontSize="23" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="VirtualMemBox" FontSize="23" VerticalAlignment="Center" MaxLength="25" MinWidth="200" MaxWidth="280" Margin="40,0,0,0" TextChanged="VirtualMemBox_TextChanged"/>
+                        <Button Name="VirtualMemBtn" Content="&#xE74e;" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="70" Click="VirtualMemBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

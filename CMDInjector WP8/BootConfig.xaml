@@ -1,0 +1,111 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.BootConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Name="PageLoadingStack" Visibility="Collapsed">
+                <ProgressBar IsIndeterminate="True"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.BootConfigPageLoadingText, Source={StaticResource LocalizedStrings}}" Margin="15,0,0,1"/>
+            </StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.BootConfigPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.BootConfigPageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" MinHeight="270"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="Boot Manager:" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="Default" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ListPicker Name="DefaultBox" Margin="40,0,0,0" HorizontalAlignment="Left" IsEnabled="False" SelectionChanged="DefaultBox_SelectionChanged"/>
+                    <TextBlock Text="DisplayOrder" FontSize="23" Margin="25,10,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ListBox Name="DisplayOrderList" FontSize="25" BorderThickness="2" Padding="5,0,10,0" BorderBrush="{StaticResource AppAccentColor}" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="180" Width="200" Margin="40,0,0,0"/>
+                        <StackPanel Margin="20,0,5,0" VerticalAlignment="Center">
+                            <Button Name="AddBtn" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE710;" Height="70" Margin="0,0,0,0" Click="AddBtn_Click"/>
+                            <Button Name="MoveUpBtn" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74A;" Height="70" Margin="0,10,0,0" Click="MoveUpBtn_Click"/>
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center" Margin="5,0,0,0">
+                            <Button Name="RemoveBtn" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE738;" Height="70" Click="RemoveBtn_Click"/>
+                            <Button Name="SaveBtn" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74e;" Height="70" Margin="0,10,0,0" IsEnabled="False" Click="SaveBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="TestSigning" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ToggleSwitch Name="ManTestSigningTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="ManTestSigningTog_Checked" Unchecked="ManTestSigningTog_Checked"/>
+                    <TextBlock Text="NoIntegrityChecks" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="ManNoIntegrityChecksTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="ManNoIntegrityChecksTog_Checked" Unchecked="ManNoIntegrityChecksTog_Checked"/>
+                    <StackPanel Name="TimeoutStack" Margin="0,0,0,5" Visibility="Visible">
+                        <TextBlock Text="TimeOut" FontSize="23" Margin="25,-25,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="TimeoutBox" InputScope="Number" MaxLength="2" Width="200" Margin="40,0,0,0" TextChanged="TimeoutBox_TextChanged" RenderTransformOrigin="0.483,0.528"/>
+                            <Button Name="TimeoutBtn" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74e;" Height="70" Click="TimeoutBtn_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="DisplayBootMenu" FontSize="23" Margin="25,5,0,0"/>
+                    <toolkit:ToggleSwitch Name="BootMenuTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="BootMenuTog_Checked" Unchecked="BootMenuTog_Checked"/>
+                    <TextBlock Text="Volume up" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ListPicker Name="VolUpBox" Margin="40,0,0,0" MinWidth="200" HorizontalAlignment="Left" IsEnabled="False" SelectionChanged="VolUpBox_SelectionChanged"/>
+                    <TextBlock Text="Volume down" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ListPicker Name="VolDownBox" Margin="40,0,0,0" MinWidth="200" HorizontalAlignment="Left" IsEnabled="False" SelectionChanged="VolDownBox_SelectionChanged"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,25,0,0">
+                    <TextBlock Text="Boot Loader:" FontSize="30" Margin="20,5,0,0"/>
+                    <TextBlock Text="Description" FontSize="23" Margin="25,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="DescriptionBox" Margin="40,0,0,0" MinWidth="200" MaxLength="20" TextChanged="DescriptionBox_TextChanged"/>
+                        <Button Name="DescriptionBtn" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" Content="&#xE74e;" Height="70" Click="DescriptionBtn_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="TestSigning" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ToggleSwitch Name="LoadTestSigningTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="LoadTestSigningTog_Checked" Unchecked="LoadTestSigningTog_Checked"/>
+                    <TextBlock Text="NoIntegrityChecks" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="LoadNoIntegrityChecksTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="LoadNoIntegrityChecksTog_Checked" Unchecked="LoadNoIntegrityChecksTog_Checked"/>
+                    <TextBlock Text="FlightSigning" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="LoadFlightSignTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="LoadFlightSignTog_Checked" Unchecked="LoadFlightSignTog_Checked"/>
+                    <TextBlock Text="BootMenuPolicy" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ListPicker Name="BootMenuPolBox" Margin="40,0,0,0" Width="200" HorizontalAlignment="Left" SelectionChanged="BootMenuPolBox_SelectionChanged">
+                        <toolkit:ListPickerItem Content="Legacy"/>
+                        <toolkit:ListPickerItem Content="Standard"/>
+                    </toolkit:ListPicker>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,25,0,0">
+                    <TextBlock Text="Boot Loader Settings:" FontSize="30" Margin="20,5,0,0"/>
+                    <TextBlock Text="AdvancedOptions" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ToggleSwitch Name="AdvOptTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="AdvOptTog_Checked" Unchecked="AdvOptTog_Checked"/>
+                    <TextBlock Text="OptionsEdit" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="OptEditTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="OptEditTog_Checked" Unchecked="OptEditTog_Checked"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,5,0,0">
+                    <TextBlock Text="Developer Menu:" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.BootConfigPageTextBlockText, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,0,0"/>
+                    <Button Name="DevMenuBtn" Content="{Binding Path=LocalizedResources.BootConfigPageButtonText1, Source={StaticResource LocalizedStrings}}" Margin="40,0,0,0" IsEnabled="False" Width="150" HorizontalAlignment="Left" Click="DevMenuBtn_Click"/>
+                    <TextBlock Text="TestSigning" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ToggleSwitch Name="DevTestSigningTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" IsEnabled="False" Checked="DevTestSigningTog_Checked" Unchecked="DevTestSigningTog_Checked"/>
+                    <TextBlock Text="NoIntegrityChecks" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="DevNoIntegrityChecksTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" IsEnabled="False" Checked="DevNoIntegrityChecksTog_Checked" Unchecked="DevNoIntegrityChecksTog_Checked"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

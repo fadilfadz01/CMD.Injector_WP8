@@ -1,0 +1,55 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.Terminal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.TerminalPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}" Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.TerminalPageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Path=LocalizedResources.TerminalPageSubTitle, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+            <Border Grid.Row="1" BorderBrush="{StaticResource AppAccentColor}" BorderThickness="2" Background="Black" Margin="25,5,25,0">
+                <ScrollViewer Name="ConsoleScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel Name="ConsoleBoxGrid">
+                        <TextBlock Name="ConsoleBox" FontFamily="/Assets/Fonts/consola.ttf#Consolas" Foreground="White"/>
+                        <TextBlock Name="TempBox" FontFamily="/Assets/Fonts/consola.ttf#Consolas" Foreground="White" Visibility="Collapsed"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="DirLabel" FontFamily="/Assets/Fonts/consola.ttf#Consolas" Foreground="White"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="2" Name="ConBtnGrid" HorizontalAlignment="Stretch" MinHeight="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <toolkit:PhoneTextBox Name="TelnetCommandBox" Hint="{Binding Path=LocalizedResources.TerminalTextBoxText, Source={StaticResource LocalizedStrings}}" FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10,0,60,0" TextChanged="TelnetCommandBox_TextChanged" TextWrapping="NoWrap"/>
+            <Button Name="CommandSendBtn" Content="&#xE751;" FontFamily="/Assets/Fonts/segmdl2.ttf#Segoe MDL2 Assets" HorizontalAlignment="Right" Height="70" Margin="0,0,0,0" Click="CommandSendBtn_Click" IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

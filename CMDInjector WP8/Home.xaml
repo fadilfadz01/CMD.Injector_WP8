@@ -1,0 +1,67 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.HomePageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}" Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.HomePageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,20,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition MinHeight="40"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,-10,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle1Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <RichTextBox TextWrapping="Wrap" Margin="14,0,0,0">
+                        <Paragraph>
+                            <Run Text="{Binding Path=LocalizedResources.HomePageSubTitle1Description1, Source={StaticResource LocalizedStrings}}"/>
+                            <Hyperlink Click="FaqHelp_Click" Foreground="#FF0078D7">FAQ</Hyperlink>
+                            <Run Text="{Binding Path=LocalizedResources.HomePageSubTitle1Description2, Source={StaticResource LocalizedStrings}}"/>
+                        </Paragraph>
+                    </RichTextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle2Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,5,0,0" Foreground="Yellow"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle2Description, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,0" Foreground="Yellow"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle3Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,5,0,0" Foreground="Red"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle3Description, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Foreground="Red" Margin="25,0,5,5"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle4Text, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,5,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.HomePageSubTitle4Description, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="25,0,5,20"/>
+                    <TextBlock Name="reInjectionBox" Text="{Binding Path=LocalizedResources.HomePageReinjectionWarning, Source={StaticResource LocalizedStrings}}" Foreground="Yellow" TextWrapping="Wrap" Margin="25,0,0,0" Visibility="Collapsed"/>
+                    <TextBlock Name="reInjectionNote" Text="{Binding Path=LocalizedResources.HomePageAppUpdateWarning, Source={StaticResource LocalizedStrings}}" Foreground="Yellow" TextWrapping="Wrap" Margin="25,0,0,0" Visibility="Collapsed"/>
+                    <TextBlock Name="reInjectionReboot" Foreground="Yellow" TextWrapping="Wrap" Margin="25,0,0,0" Visibility="Collapsed"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Button Name="InjectBtn" Content="{Binding Path=LocalizedResources.HomePageInjectButtonText1, Source={StaticResource LocalizedStrings}}" MinWidth="150" Click="InjectBtn_Click"/>
+                        <Button Name="UnInjectBtn" Content="{Binding Path=LocalizedResources.HomePageUninjectButtonText1, Source={StaticResource LocalizedStrings}}" MinWidth="150" Margin="10,0,0,0" Visibility="Collapsed" Click="UnInjectBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

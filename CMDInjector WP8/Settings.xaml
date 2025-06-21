@@ -1,0 +1,108 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMDInjector_WP8.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Line Stroke="{StaticResource AppAccentColor}" X2="1" Stretch="Fill" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageTitle, Source={StaticResource LocalizedStrings}}" FontSize="40" FontWeight="Bold" Foreground="{StaticResource AppAccentColor}"  Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageDescription, Source={StaticResource LocalizedStrings}}" Margin="20,0,0,0"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="0,-10,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0,25,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle1, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle1Text1, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ListPicker Name="AppLangCombo" Width="200" Margin="40,0,0,0" HorizontalAlignment="Left" SelectionChanged="AppLangCombo_SelectionChanged" IsEnabled="False">
+                        <toolkit:ListPickerItem Content="English"/>
+                        <toolkit:ListPickerItem Content="Russian"/>
+                    </toolkit:ListPicker>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Margin="0,20,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle2, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="10,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle2Text1, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ListPicker Name="ConsoleFontSizeBox" Width="200" Margin="40,0,0,0" HorizontalAlignment="Left" SelectionChanged="ConsoleFontSizeBox_SelectionChanged">
+                        <toolkit:ListPickerItem Content="15" HorizontalAlignment="Center"/>
+                        <toolkit:ListPickerItem Content="16" HorizontalAlignment="Center"/>
+                        <toolkit:ListPickerItem Content="17" HorizontalAlignment="Center"/>
+                        <toolkit:ListPickerItem Content="18" HorizontalAlignment="Center"/>
+                        <toolkit:ListPickerItem Content="19" HorizontalAlignment="Center"/>
+                        <toolkit:ListPickerItem Content="20" HorizontalAlignment="Center"/>
+                    </toolkit:ListPicker>
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle2Text2, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,10,0,0"/>
+                    <toolkit:ToggleSwitch Name="ArgConfirmTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="ArgConfirmTog_Checked" Unchecked="ArgConfirmTog_Checked"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Margin="0,-10,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle3, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle3Text1, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ToggleSwitch Name="CommandsWrapToggle" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="CommandsWrapToggle_Checked" Unchecked="CommandsWrapToggle_Checked"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle3Text2, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,0,0"/>
+                    <Button Name="StartupRstBtn" Content="Reset" MinWidth="150" Margin="40,0,0,0" HorizontalAlignment="Left" Click="StartupRstBtn_Click"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle4, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,5,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle4Text1, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="DefInstIndicator" Text="(Reboot required)" Foreground="Yellow" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="DefaultTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="DefaultTog_Checked" Unchecked="DefaultTog_Checked"/>
+                    <TextBlock Grid.Row="4" Text="{Binding Path=LocalizedResources.SettingsPageSubTitle4Text2, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="StorageTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="StorageTog_Checked" Unchecked="StorageTog_Checked"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle4Text3, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,0,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                        <TextBox Name="LogPathBox" FontSize="23" MinWidth="200" MaxWidth="280" IsReadOnly="True"/>
+                        <Button Name="LogPathBtn" Content="Browse" MinWidth="70" Click="LogPathBtn_Click"/>
+                    </StackPanel>
+                    <!--<TextBlock Text="Backup folder" FontSize="23" Margin="25,10,10,0"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                        <TextBox Name="BackupFoldBox" FontSize="23" MinWidth="200" MaxWidth="310" IsReadOnly="True"/>
+                        <Button Name="BackupFoldBtn" Content="Browse" MinWidth="70" Margin="0,0,40,0"/>
+                    </StackPanel>-->
+                </StackPanel>
+                <!--<StackPanel Grid.Row="3" Margin="0,15,0,0">
+                    <TextBlock Text="Snapper:" FontSize="30" Margin="20,5,0,0"/>
+                    <TextBlock Text="Notification" FontSize="23" Margin="25,0,0,0"/>
+                    <toolkit:ToggleSwitch Name="SnapNotifTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180"/>
+                    <TextBlock Text="Sound effects" FontSize="23" Margin="25,-25,0,0"/>
+                    <toolkit:ToggleSwitch Name="SnapSoundTog" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180"/>
+                </StackPanel>-->
+                <StackPanel Grid.Row="4" VerticalAlignment="Top" Margin="0,15,0,0">
+                    <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle5, Source={StaticResource LocalizedStrings}}" FontSize="30" Margin="20,0,0,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle5Text1, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,0,10,0"/>
+                        <TextBlock Name="BootshIndicator" Text="(Reboot required)" Foreground="Yellow" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="BootshToggle" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="BootshToggle_Checked" Unchecked="BootshToggle_Checked"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=LocalizedResources.SettingsPageSubTitle5Text2, Source={StaticResource LocalizedStrings}}" FontSize="23" Margin="25,-25,10,0"/>
+                        <TextBlock Name="UMCIModeIndicator" Text="(Reboot required)" Foreground="Yellow" Margin="0,-25,0,0" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <toolkit:ToggleSwitch Name="UMCIToggle" Margin="40,-15,0,0" HorizontalAlignment="Left" MinWidth="180" Checked="UMCIToggle_Checked" Unchecked="UMCIToggle_Checked"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

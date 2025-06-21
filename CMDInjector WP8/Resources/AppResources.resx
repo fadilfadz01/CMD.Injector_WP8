@@ -1,0 +1,875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>MY APPLICATION</value>
+  </data>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>Menu Item</value>
+  </data>
+  <data name="MainPageAboutButtonText" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MainPageBootConfigButtonText" xml:space="preserve">
+    <value>BootConfig</value>
+  </data>
+  <data name="MainPageHelpButtonText" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MainPageHomeButtonText" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MainPagePacManButtonText" xml:space="preserve">
+    <value>PacMan</value>
+  </data>
+  <data name="MainPageSettingsButtonText" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MainPageSnapperButtonText" xml:space="preserve">
+    <value>Snapper</value>
+  </data>
+  <data name="MainPageStartupButtonText" xml:space="preserve">
+    <value>Startup</value>
+  </data>
+  <data name="MainPageTerminalButtonText" xml:space="preserve">
+    <value>Terminal</value>
+  </data>
+  <data name="MainPageTweakBoxButtonText" xml:space="preserve">
+    <value>TweakBox</value>
+  </data>
+  <data name="HomePageAppUpdateWarning" xml:space="preserve">
+    <value>You have already injected using a higher version of this App. Please update to the latest version to re-inject.</value>
+  </data>
+  <data name="HomePageDescription" xml:space="preserve">
+    <value>System-wide injection &amp; activation.</value>
+  </data>
+  <data name="HomePageSubTitle2Description" xml:space="preserve">
+    <value>  Author does not take responsibility for any possible damage of the phone caused by the App. You are using this App solely at your own risk.</value>
+  </data>
+  <data name="HomePageSubTitle2Text" xml:space="preserve">
+    <value>Disclaimer:</value>
+  </data>
+  <data name="HomePageInjectButtonText1" xml:space="preserve">
+    <value>Inject</value>
+  </data>
+  <data name="HomePageSubTitle4Description" xml:space="preserve">
+    <value>  By injecting CMD system-wide lets you access it across other apps and devices through a telnet client. And the CMD can be un-injected from the system at any time.</value>
+  </data>
+  <data name="HomePageSubTitle4Text" xml:space="preserve">
+    <value>Injection:</value>
+  </data>
+  <data name="HomePageReinjectionWarning" xml:space="preserve">
+    <value>The App has been updated, required re-injection in order to update the CMD components and files to the system.</value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+  <data name="HomePageUninjectButtonText1" xml:space="preserve">
+    <value>Un-Inject</value>
+  </data>
+  <data name="HomePageSubTitle3Description" xml:space="preserve">
+    <value>  The bootloader of the phone must be unlocked, otherwise it will cause all the installed user apps to crash on launch.</value>
+  </data>
+  <data name="HomePageSubTitle3Text" xml:space="preserve">
+    <value>Warning:</value>
+  </data>
+  <data name="HomePageSubTitle1Description1" xml:space="preserve">
+    <value>  Before getting started please read the</value>
+  </data>
+  <data name="HomePageSubTitle1Description2" xml:space="preserve">
+    <value>and ensure that you fully comprehend and accept the Disclaimer below.</value>
+  </data>
+  <data name="HomePageSubTitle1Text" xml:space="preserve">
+    <value>Welcome:</value>
+  </data>
+  <data name="MainPageDescription" xml:space="preserve">
+    <value>A command prompt for Windows Phone 8.</value>
+  </data>
+  <data name="MainPageFirstLauncButton1" xml:space="preserve">
+    <value>Reboot</value>
+  </data>
+  <data name="MainPageFirstLauncButton2" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="MainPageFirstLauncDescription" xml:space="preserve">
+    <value>A system reboot is required to initialize the App.</value>
+  </data>
+  <data name="MainPageFirstLaunchTitle" xml:space="preserve">
+    <value>First Launch</value>
+  </data>
+  <data name="MainPageNDTKSvcWarningButton1" xml:space="preserve">
+    <value>How</value>
+  </data>
+  <data name="MainPageNDTKSvcWarningButton2" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MainPageNDTKSvcWarningDescription" xml:space="preserve">
+    <value>Please restore the NDTKSvc in order to use this App.</value>
+  </data>
+  <data name="MainPageUnsupportedButton1" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="MainPageUnsupportedButton2" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MainPageUnsupportedDescription" xml:space="preserve">
+    <value>The App is unsupported on W10M, please use the UWP version of this application.</value>
+  </data>
+  <data name="HomePageInectionRebootDescription1" xml:space="preserve">
+    <value>A previous injection reboot is pending. Please reboot your device to apply the changes.</value>
+  </data>
+  <data name="HomePageInectionRebootDescription2" xml:space="preserve">
+    <value>An injection reboot is pending. Please reboot your device as soon as possible to apply the changes.</value>
+  </data>
+  <data name="HomePageInjectButtonText2" xml:space="preserve">
+    <value>Injected</value>
+  </data>
+  <data name="HomePageInjectButtonText3" xml:space="preserve">
+    <value>Re-Inject</value>
+  </data>
+  <data name="HomePageInjectButtonText4" xml:space="preserve">
+    <value>Injecting</value>
+  </data>
+  <data name="HomePageRebootButton1" xml:space="preserve">
+    <value>Reboot now</value>
+  </data>
+  <data name="HomePageRebootButton2" xml:space="preserve">
+    <value>Reboot later</value>
+  </data>
+  <data name="HomePageRebootDescription" xml:space="preserve">
+    <value>To apply the changes made, you have to reboot your device.</value>
+  </data>
+  <data name="HomePageRebootTitle" xml:space="preserve">
+    <value>Reboot Required</value>
+  </data>
+  <data name="HomePageUninectionRebootDescription1" xml:space="preserve">
+    <value>A previous un-injection reboot is pending. Please reboot your device to apply the changes.</value>
+  </data>
+  <data name="HomePageUninectionRebootDescription2" xml:space="preserve">
+    <value>An un-injection reboot is pending. Please reboot your device as soon as possible to apply the changes.</value>
+  </data>
+  <data name="HomePageUninjectButtonText2" xml:space="preserve">
+    <value>Un-Injected</value>
+  </data>
+  <data name="AboutPageSubTitle1Text" xml:space="preserve">
+    <value>Developer:</value>
+  </data>
+  <data name="AboutPageSubTitle2Text" xml:space="preserve">
+    <value>Donate:</value>
+  </data>
+  <data name="AboutPageSubTitle3Description1" xml:space="preserve">
+    <value>Does CMD Injector collect any personal information or data?</value>
+  </data>
+  <data name="AboutPageSubTitle3Description2" xml:space="preserve">
+    <value>No, not at all. However, the App reads the device information from the registry to identify the device model for the tweaks purpose. Furthermore, to know about the capabilities used in the App and their usage, you can check out the</value>
+  </data>
+  <data name="AboutPageSubTitle3Text" xml:space="preserve">
+    <value>Privacy:</value>
+  </data>
+  <data name="AboutPageSubTitle4Text" xml:space="preserve">
+    <value>Credits:</value>
+  </data>
+  <data name="AboutPageSubTitle5Text" xml:space="preserve">
+    <value>Thanks:</value>
+  </data>
+  <data name="AboutPageSubTitle6Description" xml:space="preserve">
+    <value>@gus33000 and @basharastifan for help me to create UWP version of this application in the beginning.</value>
+  </data>
+  <data name="AboutPageSubTitle6Text" xml:space="preserve">
+    <value>Special Thanks:</value>
+  </data>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>ABOUT</value>
+  </data>
+  <data name="HomePageUninjectionWarningButton1" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="HomePageUninjectionWarningButton2" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="HomePageUninjectionWarningDescription" xml:space="preserve">
+    <value>Are you sure you want to un-inject?</value>
+  </data>
+  <data name="HomePageUninjectionWarningTitle" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="AboutPageSubTitle3Description3" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="TerminalPageConnectionDescription1" xml:space="preserve">
+    <value>Connecting...</value>
+  </data>
+  <data name="TerminalPageConnectionDescription2" xml:space="preserve">
+    <value>Connected.</value>
+  </data>
+  <data name="TerminalPageConnectionDescription3" xml:space="preserve">
+    <value>An existing connection was forcibly closed by user.
+
+Session closed.</value>
+  </data>
+  <data name="TerminalPageDescription" xml:space="preserve">
+    <value>Simple built-in command prompt.</value>
+  </data>
+  <data name="TerminalPageSubTitle" xml:space="preserve">
+    <value>Console:</value>
+  </data>
+  <data name="TerminalPageTitle" xml:space="preserve">
+    <value>TERMINAL</value>
+  </data>
+  <data name="TerminalTextBoxText" xml:space="preserve">
+    <value>Enter command here</value>
+  </data>
+  <data name="HelpPageAnswer1" xml:space="preserve">
+    <value>A. It is a tool to inject Command Prompt on your WP8 devices. It provides depth access to the system &amp; ultimate features that WP8 doesn't provide by default.</value>
+  </data>
+  <data name="HelpPageAnswer2" xml:space="preserve">
+    <value>A. Yes, otherwise it will cause all the installed user apps to crash on launch.</value>
+  </data>
+  <data name="HelpPageAnswer3" xml:space="preserve">
+    <value>A. It means the bootloader unlock patches are not present in the system anymore. This could happen when the system is updated after the bootloader is unlocked. So, either unlock the bootloader again, or disable the UMCIAuditMode registry value.</value>
+  </data>
+  <data name="HelpPageAnswer4" xml:space="preserve">
+    <value>A. You can either unlock the bootloader, or disable the UMCIAuditMode registry value and reboot.</value>
+  </data>
+  <data name="HelpPageAnswer5" xml:space="preserve">
+    <value>A. Yes.</value>
+  </data>
+  <data name="HelpPageAnswer6" xml:space="preserve">
+    <value>A. Well, it is up to you. By injecting system-wide, you can access the CMD across other apps and devices through the telnet client.</value>
+  </data>
+  <data name="HelpPageAnswer7" xml:space="preserve">
+    <value>A. Yes, if you have the CMD injected system-wide. Connect to the Host or IP at PORT 23.</value>
+  </data>
+  <data name="HelpPageAnswer8" xml:space="preserve">
+    <value>A. If you have already injected once, then yes it is necessary to re-inject to update the CMD components and files to the system.</value>
+  </data>
+  <data name="HelpPageDescription" xml:space="preserve">
+    <value>Frequently asked questions.</value>
+  </data>
+  <data name="HelpPageQuestion1" xml:space="preserve">
+    <value>Q. What is CMD Injector and what is it for?</value>
+  </data>
+  <data name="HelpPageQuestion2" xml:space="preserve">
+    <value>Q. Does this required unlocked Bootloader?</value>
+  </data>
+  <data name="HelpPageQuestion3" xml:space="preserve">
+    <value>Q. I have unlocked bootloader, but the CMD isn't working and my installed apps are crashing after the injection, why?</value>
+  </data>
+  <data name="HelpPageQuestion4" xml:space="preserve">
+    <value>Q. Unfortunately I injected CMD on locked bootloader and my installed apps are crashing, What should I do?</value>
+  </data>
+  <data name="HelpPageQuestion5" xml:space="preserve">
+    <value>Q. Does this required Interop unlock?</value>
+  </data>
+  <data name="HelpPageQuestion6" xml:space="preserve">
+    <value>Q. Is it necessary to inject CMD system-wide?</value>
+  </data>
+  <data name="HelpPageQuestion7" xml:space="preserve">
+    <value>Q. Can I connect to the CMD by using a telnet client app?</value>
+  </data>
+  <data name="HelpPageQuestion8" xml:space="preserve">
+    <value>Q. Is it necessary to re-inject the CMD after updating the App?</value>
+  </data>
+  <data name="HelpPageSubTitle" xml:space="preserve">
+    <value>Questions &amp; Answers:</value>
+  </data>
+  <data name="HelpPageTitle" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="PacManPageButton1Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="PacManPageButton1TextDescription" xml:space="preserve">
+    <value>Hold down the Browse button to add more apps to the list.</value>
+  </data>
+  <data name="PacManPageButton2Text1" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="PacManPageButton2Text2" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="PacManPageButton2Text3" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="PacManPageComboBoxItem1Text" xml:space="preserve">
+    <value>Deployment Mode</value>
+  </data>
+  <data name="PacManPageComboBoxItem2Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="PacManPageDeploymentInfoDescription" xml:space="preserve">
+    <value>• Deployment Mode
+Use this option to install unsigned app packages.
+
+
+• None
+The default behavior is used.
+
+</value>
+  </data>
+  <data name="PacManPageDeploymentInfoTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="PacManPageDescription" xml:space="preserve">
+    <value>App package installer &amp; manager.</value>
+  </data>
+  <data name="PacManPageLogFileDescription1" xml:space="preserve">
+    <value>Log file</value>
+  </data>
+  <data name="PacManPageLogFileDescription2" xml:space="preserve">
+    <value>Package</value>
+  </data>
+  <data name="PacManPageLogFileDescription3" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="PacManPageLogFileTitle1" xml:space="preserve">
+    <value>Failed Packages</value>
+  </data>
+  <data name="PacManPageLogFileTitle2" xml:space="preserve">
+    <value>Failed Package</value>
+  </data>
+  <data name="PacManPageRadioButtonItem1Text" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="PacManPageRadioButtonItem2Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="PacManPageRadioButtonItem3Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="PacManPageResultText1" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="PacManPageResultText2" xml:space="preserve">
+    <value>See log</value>
+  </data>
+  <data name="PacManPageResultText3" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="PacManPageResultText4" xml:space="preserve">
+    <value>Succeeded</value>
+  </data>
+  <data name="PacManPageResultText5" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="PacManPageSubTitle1" xml:space="preserve">
+    <value>Installer:</value>
+  </data>
+  <data name="PacManPageTextBlock1Text" xml:space="preserve">
+    <value>Deployment option</value>
+  </data>
+  <data name="PacManPageTextBlock2Text" xml:space="preserve">
+    <value>Installation type</value>
+  </data>
+  <data name="PacManPageTitle" xml:space="preserve">
+    <value>PACMAN</value>
+  </data>
+  <data name="StartupPageButtonText" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="StartupPageDescription" xml:space="preserve">
+    <value>Custom bootup execution command list.</value>
+  </data>
+  <data name="StartupPageFailedInfoTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="StartupPageSubTitle" xml:space="preserve">
+    <value>Commands:</value>
+  </data>
+  <data name="StartupPageSuccessInfoDescription" xml:space="preserve">
+    <value>The changes applied successfully.</value>
+  </data>
+  <data name="StartupPageSuccessInfoTitle" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="StartupPageTitle" xml:space="preserve">
+    <value>STARTUP</value>
+  </data>
+  <data name="AboutPageButton1Text1" xml:space="preserve">
+    <value>Check For Update</value>
+  </data>
+  <data name="AboutPageButton1Text2" xml:space="preserve">
+    <value>Checking For Updade</value>
+  </data>
+  <data name="AboutPageButton1Text3" xml:space="preserve">
+    <value>Preparing To Download</value>
+  </data>
+  <data name="AboutPageButton1Text4" xml:space="preserve">
+    <value>Waiting for network</value>
+  </data>
+  <data name="AboutPageButton1Text5" xml:space="preserve">
+    <value>Downloading Update...</value>
+  </data>
+  <data name="AboutPageButton2Text" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="AboutPageToastContent1" xml:space="preserve">
+    <value>No new updates available right now. Please check again later.</value>
+  </data>
+  <data name="AboutPageToastContent2" xml:space="preserve">
+    <value>The update has been downloaded to</value>
+  </data>
+  <data name="AboutPageToastContent3" xml:space="preserve">
+    <value>Downloading the update is failed. Please try downloading again.</value>
+  </data>
+  <data name="AboutPageToastContent4" xml:space="preserve">
+    <value>The update download has paused due to the internet connection lost. It will continue once the connection is back.</value>
+  </data>
+  <data name="AboutPageToastContent5" xml:space="preserve">
+    <value>Downloading the update is failed. Please try downloading again.</value>
+  </data>
+  <data name="AboutPageToastContent6" xml:space="preserve">
+    <value>Please turn on the cellular data or connect to a wifi.</value>
+  </data>
+  <data name="AboutPageToastTitle1" xml:space="preserve">
+    <value>No Updates</value>
+  </data>
+  <data name="AboutPageToastTitle2" xml:space="preserve">
+    <value>Update Downloaded</value>
+  </data>
+  <data name="AboutPageToastTitle3" xml:space="preserve">
+    <value>Download Failed</value>
+  </data>
+  <data name="AboutPageToastTitle4" xml:space="preserve">
+    <value>Connection Lost</value>
+  </data>
+  <data name="AboutPageToastTitle5" xml:space="preserve">
+    <value>Download Failed</value>
+  </data>
+  <data name="AboutPageToastTitle6" xml:space="preserve">
+    <value>No Network</value>
+  </data>
+  <data name="AboutPageMessageBox1Content" xml:space="preserve">
+    <value>No download location is selected. The download is canceled.</value>
+  </data>
+  <data name="AboutPageMessageBox1Title" xml:space="preserve">
+    <value>Missing Location</value>
+  </data>
+  <data name="AboutPageSubTitle2Description" xml:space="preserve">
+    <value>Want to thank me? Buy me a coffee</value>
+  </data>
+  <data name="BootConfigPageButtonText1" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="BootConfigPageButtonText2" xml:space="preserve">
+    <value>Uninstall</value>
+  </data>
+  <data name="BootConfigPageDescription" xml:space="preserve">
+    <value>GUI Boot Configuration Data customizer.</value>
+  </data>
+  <data name="BootConfigPageTextBlockText" xml:space="preserve">
+    <value>Installation</value>
+  </data>
+  <data name="BootConfigPageTitle" xml:space="preserve">
+    <value>BOOTCONFIG</value>
+  </data>
+  <data name="BootConfigPageMessageBox1Content" xml:space="preserve">
+    <value>It is recommended to install the Developer Menu and add it to the DisplayOrder or one of the Volume buttons to recover the BCD in case of corruption.</value>
+  </data>
+  <data name="BootConfigPageMessageBox1Title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="BootConfigPageMessageBox2Content" xml:space="preserve">
+    <value>Make sure the Windows Loader is selected in DisplayOrder or any of the Volume buttons. Otherwise you won't be able to boot to Windows anymore.</value>
+  </data>
+  <data name="BootConfigPageMessageBox2Title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="BootConfigPageMessageBox3Content" xml:space="preserve">
+    <value>Make sure BootMenuPolicy is set to Legacy, otherwise you won't be able to boot to the Windows anymore.</value>
+  </data>
+  <data name="BootConfigPageMessageBox3Title" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="AboutPageMessageBox2Content" xml:space="preserve">
+    <value>Couldn't install the update, try to update manually or please try again later.</value>
+  </data>
+  <data name="MainPageMessageBoxContent" xml:space="preserve">
+    <value>Not implemented yet.</value>
+  </data>
+  <data name="SettingsPageDescription" xml:space="preserve">
+    <value>Personalize the App interfaces.</value>
+  </data>
+  <data name="SettingsPageMessageBox1Content" xml:space="preserve">
+    <value>To apply the change you have to restart the App.</value>
+  </data>
+  <data name="SettingsPageMessageBox2Button1Text" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="SettingsPageMessageBox2Button2Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SettingsPageMessageBox2Content" xml:space="preserve">
+    <value>Are you sure you want to reset the Startup commands to default?</value>
+  </data>
+  <data name="SettingsPageSubTitle1" xml:space="preserve">
+    <value>Application:</value>
+  </data>
+  <data name="SettingsPageSubTitle1Text1" xml:space="preserve">
+    <value>Language (WIP)</value>
+  </data>
+  <data name="SettingsPageSubTitle2" xml:space="preserve">
+    <value>Terminal:</value>
+  </data>
+  <data name="SettingsPageSubTitle2Text1" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="SettingsPageSubTitle3" xml:space="preserve">
+    <value>Startup:</value>
+  </data>
+  <data name="SettingsPageSubTitle3Text1" xml:space="preserve">
+    <value>Text wrap</value>
+  </data>
+  <data name="SettingsPageSubTitle3Text2" xml:space="preserve">
+    <value>Commands</value>
+  </data>
+  <data name="SettingsPageSubTitle4" xml:space="preserve">
+    <value>PacMan:</value>
+  </data>
+  <data name="SettingsPageSubTitle4Text1" xml:space="preserve">
+    <value>Default installer</value>
+  </data>
+  <data name="SettingsPageSubTitle4Text2" xml:space="preserve">
+    <value>Install to SD Card</value>
+  </data>
+  <data name="SettingsPageSubTitle4Text3" xml:space="preserve">
+    <value>Installer log</value>
+  </data>
+  <data name="SettingsPageSubTitle5" xml:space="preserve">
+    <value>Misc:</value>
+  </data>
+  <data name="SettingsPageSubTitle5Text1" xml:space="preserve">
+    <value>Bootsh service</value>
+  </data>
+  <data name="SettingsPageSubTitle5Text2" xml:space="preserve">
+    <value>UMCIAuditMode</value>
+  </data>
+  <data name="SettingsPageTitle" xml:space="preserve">
+    <value>SETTINGS</value>
+  </data>
+  <data name="BootConfigPageLoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="TweakBoxPageBootTextBox1Text" xml:space="preserve">
+    <value>Spinning progress</value>
+  </data>
+  <data name="TweakBoxPageBootTextBox2Text" xml:space="preserve">
+    <value>Bootup image</value>
+  </data>
+  <data name="TweakBoxPageBootTextBox3Text" xml:space="preserve">
+    <value>Shutdown image</value>
+  </data>
+  <data name="TweakBoxPageDescription" xml:space="preserve">
+    <value>Various unique tweaks collection.</value>
+  </data>
+  <data name="TweakBoxPageDisplayTextBox1Text" xml:space="preserve">
+    <value>Brightness slider</value>
+  </data>
+  <data name="TweakBoxPageDisplayTextBox2Text" xml:space="preserve">
+    <value>Phablet mode</value>
+  </data>
+  <data name="TweakBoxPageGlanceScreenTextBox1Text" xml:space="preserve">
+    <value>Font file</value>
+  </data>
+  <data name="TweakBoxPageGlanceScreenTextBox2Text" xml:space="preserve">
+    <value>Font colour</value>
+  </data>
+  <data name="TweakBoxPageGlanceScreenTextBox3Text" xml:space="preserve">
+    <value>Move clock</value>
+  </data>
+  <data name="TweakBoxPageMiscTextBox1Text" xml:space="preserve">
+    <value>DNG support</value>
+  </data>
+  <data name="TweakBoxPageMiscTextBox2Text" xml:space="preserve">
+    <value>Virtual memory</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox9Text" xml:space="preserve">
+    <value>Burn-in icons opacity</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox1Text" xml:space="preserve">
+    <value>Software mode</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox2Text" xml:space="preserve">
+    <value>Double tap to screen off</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox3Text" xml:space="preserve">
+    <value>Auto hide</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox4Text" xml:space="preserve">
+    <value>Swipe up to hide</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox5Text" xml:space="preserve">
+    <value>User managed</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox6Text" xml:space="preserve">
+    <value>Burn-in protection</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox7Text" xml:space="preserve">
+    <value>Burn-in timeout</value>
+  </data>
+  <data name="TweakBoxPageNavigationBarTextBox8Text" xml:space="preserve">
+    <value>Burn-in replacement color</value>
+  </data>
+  <data name="TweakBoxPageSubTitleBootText" xml:space="preserve">
+    <value>Boot:</value>
+  </data>
+  <data name="TweakBoxPageSubTitleDisplayText" xml:space="preserve">
+    <value>Display:</value>
+  </data>
+  <data name="TweakBoxPageSubTitleGlanceScreenText" xml:space="preserve">
+    <value>Glance Screen:</value>
+  </data>
+  <data name="TweakBoxPageSubTitleMiscText" xml:space="preserve">
+    <value>Misc:</value>
+  </data>
+  <data name="TweakBoxPageSubTitleNavigationBarText" xml:space="preserve">
+    <value>Navigation Bar:</value>
+  </data>
+  <data name="TweakBoxPageSubTitleSystemText" xml:space="preserve">
+    <value>System:</value>
+  </data>
+  <data name="TweakBoxPageSystemButton1Content" xml:space="preserve">
+    <value>Shutdown</value>
+  </data>
+  <data name="TweakBoxPageSystemButton2Content" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="TweakBoxPageSystemButton3Content" xml:space="preserve">
+    <value>Lockscreen</value>
+  </data>
+  <data name="TweakBoxPageSystemTextBox1Text" xml:space="preserve">
+    <value>Power options</value>
+  </data>
+  <data name="TweakBoxPageSystemTextBox1Tip" xml:space="preserve">
+    <value>Hold down the button to pin it to the start screen.</value>
+  </data>
+  <data name="TweakBoxPageTitle" xml:space="preserve">
+    <value>TWEAKBOX</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox1Content" xml:space="preserve">
+    <value>Rebooting...</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox2Content" xml:space="preserve">
+    <value>Shutting down...</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox3Button1content" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox3Button2content" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox3Content" xml:space="preserve">
+    <value>Are you sure you want to shutdown the device?</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox4Button1content" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox4Button2content" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="TweakBoxPageSystemMessageBox4Content" xml:space="preserve">
+    <value>Are you sure you want to restart the device?</value>
+  </data>
+  <data name="HelpPageAnswer10" xml:space="preserve">
+    <value>A. The appx\bundle usually are signed, so use the Deployment mode on Deployment option in PacMan.</value>
+  </data>
+  <data name="HelpPageAnswer11" xml:space="preserve">
+    <value>A. By holding the icons from the App start page.</value>
+  </data>
+  <data name="HelpPageAnswer9" xml:space="preserve">
+    <value>A. No.</value>
+  </data>
+  <data name="HelpPageQuestion10" xml:space="preserve">
+    <value>Q. Why can't I install appx\bundle packages from PacMan?</value>
+  </data>
+  <data name="HelpPageQuestion11" xml:space="preserve">
+    <value>Q. How can I pin the App individual menu to the start screen?</value>
+  </data>
+  <data name="HelpPageQuestion9" xml:space="preserve">
+    <value>Q. Does the CMD works after relock the Bootloader?</value>
+  </data>
+  <data name="SettingsPageSubTitle2Text2" xml:space="preserve">
+    <value>Argument confirmation</value>
+  </data>
+  <data name="MainPageExitMessageBoxContent" xml:space="preserve">
+    <value>Are you sure you want exit the App?</value>
+  </data>
+  <data name="SnapperPageButton1Content1" xml:space="preserve">
+    <value>Start Capture</value>
+  </data>
+  <data name="SnapperPageButton1Content2" xml:space="preserve">
+    <value>Stop Capturing</value>
+  </data>
+  <data name="SnapperPageButton2Content1" xml:space="preserve">
+    <value>Start Record</value>
+  </data>
+  <data name="SnapperPageButton2Content2" xml:space="preserve">
+    <value>Stop Recording</value>
+  </data>
+  <data name="SnapperPageButton2Content3" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
+  <data name="SnapperPageDescription" xml:space="preserve">
+    <value>Advanced screen capturer &amp;amp; recorder.</value>
+  </data>
+  <data name="SnapperPageNotification1Content" xml:space="preserve">
+    <value>Capturing screenshots...</value>
+  </data>
+  <data name="SnapperPageNotification2Content" xml:space="preserve">
+    <value>The capturing has been completed.</value>
+  </data>
+  <data name="SnapperPageNotification3Content" xml:space="preserve">
+    <value>Recording screen...</value>
+  </data>
+  <data name="SnapperPageNotification4Content" xml:space="preserve">
+    <value>The recorded clip has been saved to</value>
+  </data>
+  <data name="SnapperPageSubtitle1Text" xml:space="preserve">
+    <value>Screen Capturer:</value>
+  </data>
+  <data name="SnapperPageSubtitle2Text" xml:space="preserve">
+    <value>Screen Recorder:</value>
+  </data>
+  <data name="SnapperPageTextBlock1Text" xml:space="preserve">
+    <value>Amount of shots</value>
+  </data>
+  <data name="SnapperPageTextBlock2Text" xml:space="preserve">
+    <value>Delay between shots</value>
+  </data>
+  <data name="SnapperPageTextBlock3Text" xml:space="preserve">
+    <value>Frame rate</value>
+  </data>
+  <data name="SnapperPageTextBlock4Text" xml:space="preserve">
+    <value>Bit rate</value>
+  </data>
+  <data name="SnapperPageTitle" xml:space="preserve">
+    <value>SNAPPER</value>
+  </data>
+</root>

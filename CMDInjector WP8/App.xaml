@@ -1,0 +1,31 @@
+﻿<Application
+    x:Class="CMDInjector_WP8.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+
+    <!--Application Resources-->
+    <Application.Resources>
+        <local:LocalizedStrings xmlns:local="clr-namespace:CMDInjector_WP8" x:Key="LocalizedStrings"/>
+        <SolidColorBrush x:Key="AppAccentColor" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="ToggleSwitchFillOn" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="RadioButtonOuterEllipseCheckedStroke" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="SliderTrackValueFill" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="SliderThumbBackground" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightListAccentLowBrush" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightListAccentHighBrush" Color="{StaticResource PhoneAccentColor}"/>
+        <!--<SolidColorBrush x:Key="SelectionHighlightColor" Color="{StaticResource PhoneAccentColor}"/>
+        <SolidColorBrush x:Key="SystemControlHighlightAltBaseHighBrush" Color="{StaticResource PhoneAccentColor}"/>-->
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <!--Required object that handles lifetime events for the application-->
+        <shell:PhoneApplicationService
+            Launching="Application_Launching" Closing="Application_Closing"
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+    </Application.ApplicationLifetimeObjects>
+
+</Application>
